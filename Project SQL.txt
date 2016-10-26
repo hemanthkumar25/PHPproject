@@ -1,0 +1,175 @@
+-- phpMyAdmin SQL Dump
+-- version 2.8.0.1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: custsql-dom03.eigbox.net
+-- Generation Time: Jun 18, 2015 at 05:27 PM
+-- Server version: 5.5.32
+-- PHP Version: 4.4.9
+-- 
+-- Database: `hemanth25`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `Login`
+-- 
+
+CREATE TABLE `Login` (
+  `FirstName` varchar(50) NOT NULL,
+  `LastName` varchar(50) NOT NULL,
+  `EmailId` varchar(50) NOT NULL,
+  `Password` varchar(50) NOT NULL,
+  `code` varchar(50) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FirstName`),
+  UNIQUE KEY `LastName` (`LastName`,`EmailId`),
+  UNIQUE KEY `code` (`code`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table `Login`
+-- 
+
+INSERT INTO `Login` VALUES ('Hemanth', 'Kumar', 'hemanthkumar25@gmail.com', '4bb52c85cb51237d8c57d894201a0c2d', '1214560272', 1);
+INSERT INTO `Login` VALUES ('VEERAPPAN RAJA', 'VEERAPPAN SHANMUGAM', 'vsvraja@gmail.com', '202cb962ac59075b964b07152d234b70', '1262928392', 1);
+INSERT INTO `Login` VALUES ('', '', '', 'd41d8cd98f00b204e9800998ecf8427e', '1395383222', 0);
+INSERT INTO `Login` VALUES ('Archana', 'Hariharan', 'archanahari.24@gmail.com', '202cb962ac59075b964b07152d234b70', '1271355426', 1);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `LoginJava`
+-- 
+
+CREATE TABLE `LoginJava` (
+  `UserName` varchar(50) NOT NULL,
+  `Password` varchar(50) NOT NULL,
+  `FirstName` varchar(50) NOT NULL,
+  `LastName` varchar(50) NOT NULL,
+  UNIQUE KEY `UserName` (`UserName`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table `LoginJava`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `checkbox`
+-- 
+
+CREATE TABLE `checkbox` (
+  `cname` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table `checkbox`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `images`
+-- 
+
+CREATE TABLE `images` (
+  `username` varchar(50) NOT NULL,
+  `ImgName` varchar(50) NOT NULL,
+  `size` varchar(20) NOT NULL,
+  `date` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table `images`
+-- 
+
+INSERT INTO `images` VALUES ('vsvraja@gmail.com', '123.jpg', '154.27 KB', '2015-05-10 23:45:45');
+INSERT INTO `images` VALUES ('vsvraja@gmail.com', 'images.jpg', '3.16 KB', '2015-05-10 23:56:54');
+INSERT INTO `images` VALUES ('archanahari.24@gmail.com', 'dog.jpg', '6.1 KB', '2015-05-11 03:54:44');
+INSERT INTO `images` VALUES ('archanahari.24@gmail.com', 'dog.jpg', '6.1 KB', '2015-05-11 03:58:28');
+INSERT INTO `images` VALUES ('archanahari.24@gmail.com', 'dog.jpg', '6.1 KB', '2015-05-11 04:03:34');
+INSERT INTO `images` VALUES ('archanahari.24@gmail.com', 'dog.jpg', '6.1 KB', '2015-05-11 04:04:10');
+INSERT INTO `images` VALUES ('vsvraja@gmail.com', 'Output - Copy (4).JPG', '48.55 KB', '2015-05-11 11:29:45');
+INSERT INTO `images` VALUES ('hemanthkumar25@gmail.com', 'star-wars-the-force-awakens-lightsaber.jpg', '1269.98 KB', '2015-05-11 15:00:43');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `people`
+-- 
+
+CREATE TABLE `people` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(50) NOT NULL,
+  `Description` varchar(150) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+
+-- 
+-- Dumping data for table `people`
+-- 
+
+INSERT INTO `people` VALUES (1, 'veera', 'good boy');
+INSERT INTO `people` VALUES (2, 'Hemanth', 'bad boy');
+INSERT INTO `people` VALUES (3, 'veera ', 'buy Challenger');
+INSERT INTO `people` VALUES (4, '', '');
+INSERT INTO `people` VALUES (6, 'suganya', 'pretty gal');
+INSERT INTO `people` VALUES (7, '', '');
+INSERT INTO `people` VALUES (8, '', '');
+INSERT INTO `people` VALUES (9, 'check', '');
+INSERT INTO `people` VALUES (10, 'Check2', 'nothing');
+INSERT INTO `people` VALUES (11, 'check3', '');
+INSERT INTO `people` VALUES (12, 'hbjb', '');
+INSERT INTO `people` VALUES (13, 'ngfgv', '');
+INSERT INTO `people` VALUES (14, '', '');
+INSERT INTO `people` VALUES (15, '', '');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `sjsu`
+-- 
+
+CREATE TABLE `sjsu` (
+  `MySJSU ID` varchar(11) NOT NULL,
+  `First Name` varchar(50) NOT NULL,
+  `Last Name` varchar(50) NOT NULL,
+  `Department` varchar(50) NOT NULL,
+  FULLTEXT KEY `MySJSU ID` (`MySJSU ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table `sjsu`
+-- 
+
+INSERT INTO `sjsu` VALUES ('010040004', 'FNU', 'Suganya Kanagavel', 'EE');
+INSERT INTO `sjsu` VALUES ('010039991', 'Veerappan Raja', 'Veerappan Shanmugam', 'EE');
+INSERT INTO `sjsu` VALUES ('010034565', 'Hemanth', 'Kumar', 'EE');
+INSERT INTO `sjsu` VALUES ('010034955', 'Rahul', 'Jain', 'CMPE');
+INSERT INTO `sjsu` VALUES ('01090909', 'Veera', 'Raja', 'EE');
+INSERT INTO `sjsu` VALUES ('Test Data', 'Test Data', 'Test Data', 'Test Data');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `users`
+-- 
+
+CREATE TABLE `users` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `code` varchar(50) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table `users`
+-- 
+
+INSERT INTO `users` VALUES ('vvv', 'ab233b682ec355648e7891e66c54191b', 'vsvraja@gmail.com', '75428969', 1);
